@@ -1,3 +1,12 @@
+---
+nome: Sombras Urbanas
+autor: Aster Editora
+previsao: jun/2018
+comunicacao: 16/07/2020
+apoiadores: 240
+arrecadado: R$ 36.620
+---
+
 # Sombras Urbanas
 
 ## Informações
