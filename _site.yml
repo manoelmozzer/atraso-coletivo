@@ -1,0 +1,7 @@
+name: "Atraso Coletivo"
+navbar:
+  title: "Atraso Coletivo"
+  right:
+    - text: "GitHub"
+      href: https://github.com/manoelmozzer/atraso-coletivo
+exclude: ["*.csv"]

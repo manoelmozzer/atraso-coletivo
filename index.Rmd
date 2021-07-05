@@ -1,0 +1,14 @@
+---
+title: "Atraso Coletivo"
+output: html_document
+---
+
+```{css, echo=FALSE}
+.author,.title{
+    display: none;
+}
+```
+
+```{r, code=xfun::read_utf8('reactable.R'), echo=FALSE, message=FALSE, warning=FALSE, }
+```
+
