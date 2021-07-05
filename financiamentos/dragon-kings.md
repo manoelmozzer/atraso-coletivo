@@ -1,5 +1,6 @@
 ---
 nome: Dragon Kings
+link: https://www.catarse.me/dragonkings
 autor: Pensamento Coletivo
 previsao: dez/2018
 comunicacao: 30/06/2021
