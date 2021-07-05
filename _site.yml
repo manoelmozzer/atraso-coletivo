@@ -1,4 +1,5 @@
 name: "Atraso Coletivo"
+output_dir: docs
 navbar:
   title: "Atraso Coletivo"
   right:
