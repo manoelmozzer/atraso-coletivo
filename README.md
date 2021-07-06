@@ -2,6 +2,8 @@
 
 **Financiamentos Coletivos são incríveis, mas podem ter um lado negro.**
 
+Tabela: <https://manoelmozzer.github.io/atraso-coletivo/>
+
 O objetivo desse projeto é divulgar os financiamentos coletivos que estão *atrasados* e, especialmente, os *abandonados*. Uma forma de conseguirmos centralizar informações sobre os projetos e, em união, pressionar os realizadores e o próprio Catarse a não permitir o desrespeito com um coletivo de consumidores.
 
 ## Como posso ajudar?
@@ -14,7 +16,7 @@ Use a aba `Discussions` para abrir tópicos de discussão sobre os financiamento
 
 Muitas discussões sobre os atrasos/abandonos em financiamentos ocorrem nos grupos específicos do projeto no Facebook/Discord/etc. Muitos desses grupos não são indexados nas pesquisas na internet, ou ainda são moderados pelo próprio autor do projeto. Assim, soluções específicas não conseguem alcançar todos os interessados.
 
-Por isso, seria legal se você utilizasse as abas `Issues` e `Discussions` para disseminar informação sobre atrasos/abandonos em projetos.
+Por isso, esse projeto pode ajudar a divulgar informações sobre atrasos/abandonos em financiamentos coletivos.
 
 ## O Catarse tem responsabilidade no caso de abandono do financiamento coletivo?
 
@@ -22,7 +24,7 @@ Apesar de no site eles tentarem nos convencer que não, para o Juizado Especial 
 
 ## Quem insere/atualiza a lista?
 
-A princípio nós. Ainda devo fazer algum tutorial sobre como o [site](https://manoelmozzer.github.io/atraso-coletivo/) é gerado, mas até lá saiba que os dados estão no arquivo `atrasados-dados.csv`, disponível aqui no projeto.
+A princípio nós. Ainda devo fazer algum tutorial sobre como a [tabela](https://manoelmozzer.github.io/atraso-coletivo/) é gerada, mas até lá saiba que os dados estão no arquivo [`atrasados-dados.csv`](../blob/master/atrasados-dados.csv), disponível aqui no projeto.
 
 *OBS:* Não tenho grandes conhecimentos em tecnologia, por isso se você tiver ideias melhores para facilitar a transparência das informações, me avise (ou clone esse projeto).
 
@@ -30,4 +32,4 @@ Sugestões são sempre bem-vindas.
 
 ## Contato
 
-Utilize as ferramentas acima indicadas no próprio GitHub, ou se quiser falar diretamente comigo, respondo no e-mail: `manoelmozzer@hotmail.com`
+Utilize as ferramentas acima indicadas no próprio GitHub. Se quiser falar diretamente comigo, respondo no e-mail: `manoelmozzer@hotmail.com`
