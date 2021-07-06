@@ -24,7 +24,7 @@ Apesar de no site eles tentarem nos convencer que não, para o Juizado Especial 
 
 ## Quem insere/atualiza a lista?
 
-A princípio nós. Ainda devo fazer algum tutorial sobre como a [tabela](https://manoelmozzer.github.io/atraso-coletivo/) é gerada, mas até lá saiba que os dados estão no arquivo [`atrasados-dados.csv`](../blob/master/atrasados-dados.csv), disponível aqui no projeto.
+A princípio nós. Ainda devo fazer algum tutorial sobre como a [tabela](https://manoelmozzer.github.io/atraso-coletivo/) é gerada, mas até lá saiba que os dados estão no arquivo [`atrasados-dados.csv`](../master/atrasados-dados.csv), disponível aqui no projeto.
 
 *OBS:* Não tenho grandes conhecimentos em tecnologia, por isso se você tiver ideias melhores para facilitar a transparência das informações, me avise (ou clone esse projeto).
 
