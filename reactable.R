@@ -21,6 +21,8 @@ a$Dif.Comunicacao <- ifelse(difftime(Sys.Date(),a$Comunicacao)>120,"Não","Sim")
 # a$Dif.Comunicacao <- as.numeric(difftime(Sys.Date(),a$Comunicacao))
 a <- a[,c(1,2,3,4,8,9,5,10,6,7,11,12,13)]
 
+a$Arrecadado <- format(a$Arrecadado, big.mark=".", decimal.mark=",", scientific=FALSE)
+
 
 
 library(reactable)
@@ -43,9 +45,18 @@ reactable(a, compact=FALSE, filterable=FALSE, searchable = TRUE, defaultPageSize
               #url <- a$Link[index]
               #htmltools::tags$a(href = url, target = "_blank", as.character(value))
             #},
-              headerStyle = list(position = "sticky", left = 0, background = "#fff", zIndex = 1, display = "flex", flexDirection = "column", alignSelf = "flex-end"),
+              headerStyle = list(display = "flex", flexDirection = "column", alignSelf = "flex-end"),
             cell = JS("function(cellInfo) {
-      return '<div class=projeto><div class=thumb><img src=' + cellInfo.row['Thumb'] + ' width=80></div><div class=info><div class=nome><a href= ' + cellInfo.row['Link'] + '>' + cellInfo.value + '</a></div><div class=autor>' + cellInfo.row['Autor'] + '</div><div>' + cellInfo.row['Apoiadores'] + ' apoiadores • R$ ' + cellInfo.row['Arrecadado'] + '</div></div>'
+      return (
+      '<div class=projeto>' +
+         '<div class=thumb><img src=' + cellInfo.row['Thumb'] + ' width=80></div>' +
+         '<div class=info>' +
+            '<div class=nome><a href= ' + cellInfo.row['Link'] + '>' + cellInfo.value + '</a></div>' +
+            '<div class=autor>' + cellInfo.row['Autor'] + '</div>' +
+            '<div>' + cellInfo.row['Apoiadores'] + ' apoiadores • R$ ' + cellInfo.row['Arrecadado'] + '</div>' +
+         '</div>' +
+      '</div>'
+      );
     }"), html=TRUE),
             Link = colDef(show=FALSE),
             Autor = colDef(show = FALSE),
