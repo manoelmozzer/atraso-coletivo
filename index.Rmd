@@ -35,6 +35,6 @@ output: html_document
 
 ```
 
-```{r, code=xfun::read_utf8('reactable.R'), echo=FALSE, message=FALSE, warning=FALSE, }
+```{r, code=xfun::read_utf8('reactable.R'), echo=FALSE, message=FALSE, warning=FALSE}
 ```
 
