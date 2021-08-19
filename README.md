@@ -8,9 +8,9 @@ O objetivo desse projeto é divulgar os financiamentos coletivos que estão *atr
 
 ## Como posso ajudar?
 
-Faça um comentário na aba `Issues` indicando o link de algum financiamento que você está participando que está com entregas atrasadas.
+Faça um comentário na aba [`Issues`](https://github.com/manoelmozzer/atraso-coletivo/issues) indicando o link de algum financiamento que você está participando que está com entregas atrasadas.
 
-Use a aba `Discussions` para abrir tópicos de discussão sobre os financiamentos atrasados.
+Use a aba [`Discussions`](https://github.com/manoelmozzer/atraso-coletivo/discussions) para abrir tópicos de discussão sobre os financiamentos atrasados.
 
 ## Por que esse projeto?
 
