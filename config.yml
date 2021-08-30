@@ -1,4 +1,4 @@
-baseURL: '//manoelmozzer.github.io/atraso-coletivo/'
+baseURL: 'https://manoelmozzer.github.io/atraso-coletivo/'
 defaultContentLanguage: pt
 title: Atraso Coletivo
 theme: PaperMod-5.0
