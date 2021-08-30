@@ -1,0 +1,22 @@
+%%% Render: https://mermaid-js.github.io/mermaid-live-editor/
+
+%%% Code
+graph
+    A(Apoiador entra em<br>Contato com Criador do<br>Projeto) -- Sem resposta ou<br>resposta insatisfatória --> B(Apoiador comunica<br>o Catarse)
+    B --> C(Catarse entra em<br>contato com o Criador)
+    C -- 5 dias --> D(Criador<br>Responde)
+    C -- 5 dias --> E(Criador<br>Não Responde)
+    E --> F(Catarse fornece<br>dados do Criador<br>ao Apoiador)
+    D --> G
+    F --> G(FIM<br>O Catarse dá como cumprido<br>seu papel de facilitador)
+
+%%% Config
+{
+    "theme": "neutral"
+}
+
+%%% Exportação
+Actions -> (Link Externo) PNG
+* A qualidade de exportar em link externo como png é superior do que como baixar como png.
+
+%%% Link: https://mermaid-js.github.io/mermaid-live-editor/edit#eyJjb2RlIjoiZ3JhcGhcbiAgICBBKEFwb2lhZG9yIGVudHJhIGVtPGJyPkNvbnRhdG8gY29tIENyaWFkb3IgZG88YnI-UHJvamV0bykgLS0gU2VtIHJlc3Bvc3RhIG91PGJyPnJlc3Bvc3RhIGluc2F0aXNmYXTDs3JpYSAtLT4gQihBcG9pYWRvciBjb211bmljYTxicj5vIENhdGFyc2UpXG4gICAgQiAtLT4gQyhDYXRhcnNlIGVudHJhIGVtPGJyPmNvbnRhdG8gY29tIG8gQ3JpYWRvcilcbiAgICBDIC0tIDUgZGlhcyAtLT4gRChDcmlhZG9yPGJyPlJlc3BvbmRlKVxuICAgIEMgLS0gNSBkaWFzIC0tPiBFKENyaWFkb3I8YnI-TsOjbyBSZXNwb25kZSlcbiAgICBFIC0tPiBGKENhdGFyc2UgZm9ybmVjZTxicj5kYWRvcyBkbyBDcmlhZG9yPGJyPmFvIEFwb2lhZG9yKVxuICAgIEQgLS0-IEdcbiAgICBGIC0tPiBHKEZJTTxicj5PIENhdGFyc2UgZMOhIGNvbW8gY3VtcHJpZG88YnI-c2V1IHBhcGVsIGRlIGZhY2lsaXRhZG9yKSIsIm1lcm1haWQiOiJ7XG5cInRoZW1lXCI6IFwibmV1dHJhbFwiXG59IiwidXBkYXRlRWRpdG9yIjpmYWxzZSwiYXV0b1N5bmMiOnRydWUsInVwZGF0ZURpYWdyYW0iOmZhbHNlfQ

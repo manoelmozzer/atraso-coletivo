@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Atraso Coletivo</title>
+
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/core-js-2.5.3/shim.min.js"></script>
+<script src="site_libs/react-17.0.0/react.min.js"></script>
+<script src="site_libs/react-17.0.0/react-dom.min.js"></script>
+<script src="site_libs/reactwidget-1.0.0/react-tools.js"></script>
+<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="site_libs/reactable-binding-0.2.3/reactable.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- NOTE: add "navbar-inverse" class for an alternate navbar background -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="tabela.html">Atraso Coletivo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <!-- <li><a href="tabela.html">Atraso Coletivo</a></li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/manoelmozzer/atraso-coletivo">GitHub</a></li>
+        <li><a href="https://manoelmozzer.github.io/atraso-coletivo/">Blog</a></li>
+        <li><a href="https://discord.gg/sbTRKnbbdf">Discord</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Atraso Coletivo</h1>
+
+</div>
+
+
+<style type="text/css">
+.author,.title{
+    display: none;
+}
+
+.autor {
+   margin-right: 4px;
+   padding: 0 4px;
+   border: 1px solid hsl(0, 0%, 75%);
+   border-radius: 2px;
+}
+
+.projeto {
+  display: flex
+}
+
+.nome{
+  font-weight: bold
+}
+
+.info{
+  margin-left: 12px;
+}
+
+.thumb{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+</style>
+<div id="htmlwidget-ecfe007060dfe795c2d4" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ecfe007060dfe795c2d4">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Nome":["O Véu: Cyberpunk RPG","The Indie Hack","Ratos nas Paredes","Symbaroum RPG","Sombras Urbanas","Monsterhearts RPG","Dragon Kings"],"Link":["https://www.catarse.me/oveu","https://www.catarse.me/tih","https://www.catarse.me/ratosnasparedes","https://www.catarse.me/symbaroum","https://www.catarse.me/sombrasurbanas","https://www.catarse.me/monsterhearts","https://www.catarse.me/dragonkings"],"Autor":["fábrica","fábrica","fábrica","Pensamento Coletivo","Aster Editora","fábrica","Pensamento Coletivo"],"Previsao":["2019-03-31","2019-05-31","2019-06-30","2019-11-30","2018-06-30","2020-03-31","2018-12-31"],"Thumb":["https://s3-sa-east-1.amazonaws.com/cdn.br.catarse/uploads/project/uploaded_image/83739/project_thumb_large_Banners_FC_TheVeil_Card_OVéu.jpg","https://s3-sa-east-1.amazonaws.com/cdn.br.catarse/uploads/project/uploaded_image/86524/project_thumb_large_card_2.jpg","https://s3-sa-east-1.amazonaws.com/cdn.br.catarse/uploads/project/uploaded_image/91306/project_thumb_large_card.jpg","https://s3-sa-east-1.amazonaws.com/cdn.br.catarse/uploads/project/uploaded_image/91295/project_thumb_large_card.png","https://s3-sa-east-1.amazonaws.com/cdn.br.catarse/uploads/project/uploaded_image/64452/project_thumb_large_CAPA_TAMANHO_CERTO_FINAL_PLMDDS.png","https://s3-sa-east-1.amazonaws.com/cdn.br.catarse/uploads/project/uploaded_image/103229/project_thumb_large_Card_Catarse.jpg","https://s3-sa-east-1.amazonaws.com/cdn.br.catarse/uploads/project/uploaded_image/69416/project_thumb_large_card.png"],"Previsao.Tabela":["2019-03-01","2019-05-01","2019-06-01","2019-11-01","2018-06-01","2020-03-01","2018-12-01"],"Comunicacao":["2020-10-01","2020-10-01","2020-10-01","2021-06-30","2020-07-16","2020-11-01","2021-06-30"],"Previsao.Tabela.MesAno":["mar/2019","mai/2019","jun/2019","nov/2019","jun/2018","mar/2020","dez/2018"],"Apoiadores":[220,123,226,205,240,191,88],"Arrecadado":["25.305"," 5.265","12.450","30.647","36.620","13.220","12.388"],"Comunicacao.Tabela":["01/10/2020","01/10/2020","01/10/2020","30/06/2021","16/07/2020","01/11/2020","30/06/2021"],"Atraso":[882,821,791,638,1156,516,972],"Dif.Comunicacao":["Não","Não","Não","Sim","Não","Não","Sim"]},"columns":[{"accessor":"Nome","name":"Projeto","type":"character","cell":"function(cellInfo) {\n      return (\n      '<div class=projeto>' +\n         '<div class=thumb><img src=' + cellInfo.row['Thumb'] + ' width=80><\/div>' +\n         '<div class=info>' +\n            '<div class=nome><a href= ' + cellInfo.row['Link'] + '>' + cellInfo.value + '<\/a><\/div>' +\n            '<div class=autor>' + cellInfo.row['Autor'] + '<\/div>' +\n            '<div>' + cellInfo.row['Apoiadores'] + ' apoiadores • R$ ' + cellInfo.row['Arrecadado'] + '<\/div>' +\n         '<\/div>' +\n      '<\/div>'\n      );\n    }","html":true,"minWidth":200,"headerStyle":{"display":"flex","flexDirection":"column","alignSelf":"flex-end"}},{"accessor":"Link","name":"Link","type":"character","show":false},{"accessor":"Autor","name":"Autor","type":"character","show":false},{"accessor":"Previsao","name":"Previsao","type":"Date","show":false},{"accessor":"Thumb","name":"Thumb","type":"character","show":false},{"accessor":"Previsao.Tabela","name":"Previsão de Entrega","type":"Date","cell":"function(cellInfo) {\n                   var today = new Date();\n                   var dd = String(today.getDate()).padStart(2, '0');\n                   var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!\n                   var yyyy = today.getFullYear();\n                   today = yyyy + '-' + mm + '-' + dd;\n      \n                   var date1 = new Date(today);\n                   var date2 = new Date(cellInfo.row['Previsao']);\n      \n                   var diff = date1 - date2;\n                   var dias = Math.floor(diff/86400000);\n      \n                   return cellInfo.row['Previsao.Tabela.MesAno'] + '<div>' + dias + ' dias de atraso<\/div>'\n                   }","html":true,"align":"center","style":{"display":"flex","flexDirection":"column","justifyContent":"center"},"headerStyle":{"display":"flex","flexDirection":"column","alignSelf":"flex-end"}},{"accessor":"Comunicacao","name":"Última Comunicação","type":"Date","cell":"function(cellInfo) {\n                        var today = new Date();\n                        var dd = String(today.getDate()).padStart(2, '0');\n                        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!\n                        var yyyy = today.getFullYear();\n                        today = yyyy + '-' + mm + '-' + dd;\n      \n                        var date1 = new Date(today);\n                        var date2 = new Date(cellInfo.row['Comunicacao']);\n      \n                        var diff = date1 - date2;\n                        var dias = Math.floor(diff/86400000);\n                        \n                        if (dias > 120) {\n                           return cellInfo.row['Comunicacao.Tabela'] + '<div>Em 120 dias? Não<\/div>'\n                        } else {\n                           return cellInfo.row['Comunicacao.Tabela'] + '<div>Em 120 dias? Sim<\/div>'\n                        }\n      \n                 }","html":true,"minWidth":110,"align":"center","style":{"display":"flex","flexDirection":"column","justifyContent":"center"},"headerStyle":{"display":"flex","flexDirection":"column","alignSelf":"flex-end"}},{"accessor":"Previsao.Tabela.MesAno","name":"Previsao.Tabela.MesAno","type":"character","show":false},{"accessor":"Apoiadores","name":"Apoiadores","type":"numeric","show":false},{"accessor":"Arrecadado","name":"Arrecadado","type":"character","show":false},{"accessor":"Comunicacao.Tabela","name":"Comunicacao.Tabela","type":"character","show":false},{"accessor":"Atraso","name":"Atraso<br>(dias)","type":"numeric","show":false,"cell":"function(cellInfo) {\n                                      var today = new Date();\n                                      var dd = String(today.getDate()).padStart(2, '0');\n                                      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!\n                                      var yyyy = today.getFullYear();\n                                      today = yyyy + '-' + mm + '-' + dd;\n      \n                                      var date1 = new Date(today);\n                                      var date2 = new Date(cellInfo.row['Previsao']);\n      \n                                      var diff = date1 - date2;\n                                      var dias = Math.floor(diff/86400000);\n      \n                                      return '<b>' + dias + '<\/b>'\n                                      }","html":true,"minWidth":80,"align":"center","style":{"display":"flex","flexDirection":"column","justifyContent":"center"},"headerStyle":{"display":"flex","flexDirection":"column","alignSelf":"flex-end"}},{"accessor":"Dif.Comunicacao","name":"Comunicação<br>(em 120 dias)","type":"character","resizable":false,"show":false,"cell":"function(cellInfo) {\n                        var today = new Date();\n                        var dd = String(today.getDate()).padStart(2, '0');\n                        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!\n                        var yyyy = today.getFullYear();\n                        today = yyyy + '-' + mm + '-' + dd;\n      \n                        var date1 = new Date(today);\n                        var date2 = new Date(cellInfo.row['Comunicacao']);\n      \n                        var diff = date1 - date2;\n                        var dias = Math.floor(diff/86400000);\n                        \n                        if (dias > 120) {\n                           return 'Não'\n                        } else {\n                           return 'Sim'\n                        }\n      \n                 }","html":true,"align":"center","style":{"display":"flex","flexDirection":"column","justifyContent":"center"},"headerStyle":{"display":"flex","flexDirection":"column","alignSelf":"flex-end"}}],"searchable":true,"defaultSortDesc":true,"defaultSorted":[{"id":"Atraso","desc":true}],"defaultPageSize":30,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"language":{"searchPlaceholder":"Pesquisar","noData":"Nenhum registro encontrado","pageNext":"Próximo","pagePrevious":"Anterior","pageInfo":"{rowStart}–{rowEnd} de {rows} registros"},"dataKey":"14eb28e8a578b159adf47296485076c3","key":"14eb28e8a578b159adf47296485076c3"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.cell","tag.attribs.columns.5.cell","tag.attribs.columns.6.cell","tag.attribs.columns.11.cell","tag.attribs.columns.12.cell"],"jsHooks":[]}</script>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+:root {
+    --theme: #f5f5f5;
+}
+
+.post-content img[src*="#center"] {
+    margin: 8px auto;
+}
+
+/* editado de themes\PaperMod\assets\css\common\zmedia.css*/
+.first-entry {
+    min-height: 0px;
+    margin: var(--gap) 0 var(--gap) 0;
+}
+
+/* editado de themes\PaperMod\assets\css\core\zmedia.css*/
+@media screen and (max-width: 768px) {
+    /* post-entry */
+    .first-entry {
+        min-height: 0px;
+    }

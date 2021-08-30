@@ -1,0 +1,8 @@
+name: "tabela"
+output_dir: tabela
+# navbar:
+#   title: '<a class="navbar-brand" href="tabela.html">Atraso Coletivo</a>'
+#   right:
+#     - text: "GitHub"
+#       href: https://github.com/manoelmozzer/atraso-coletivo
+exclude: ["*.csv"]

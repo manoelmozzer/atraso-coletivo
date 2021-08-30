@@ -1,0 +1,64 @@
+baseURL: 'https://manoelmozzer.github.io/atraso-coletivo/'
+defaultContentLanguage: pt
+title: Atraso Coletivo
+theme: PaperMod-5.0
+googleAnalytics: G-TCQZL1H50X
+staticDir:
+  - static
+  - table-R/tabela
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+menu:
+  main:
+    - name: Arquivo
+      url: arquivo
+      weight: 1
+    - name: Pesquisa
+      url: pesquisa
+      weight: 10
+    - name: Tabela
+      url: tabela.html
+      weight: 10
+    - name: Sobre
+      url: sobre
+params:
+  ShowReadingTime: true
+  # ShowBreadCrumbs: true
+  comments: true
+  homeInfoParams:
+    title: O Lado Negro dos Financiamentos
+    content: >
+      Blog criado para melhorar o cenário dos financiamentos coletivos
+      brasileiros. Aqui você pode encontrar informações sobre a responsabilidade
+      das plataformas e dos criadores.
+
+      Tem algum financiamento atrasado/abandonado? Indique na
+      [Tabela](https://manoelmozzer.github.io/atraso-coletivo/) e ingresse no
+      [Discord](https://discord.gg/sbTRKnbbdf).
+  socialIcons:
+    - name: github
+      url: 'https://github.com/manoelmozzer/atraso-coletivo'
+    - name: tabela
+      url: tabela.html
+    - name: discord
+      url: 'https://discord.gg/sbTRKnbbdf'
+languages:
+  pt:
+    months:
+      01: "Janeiro"
+      02: "Fevereiro"
+      03: "Março"
+      04: "Abril"
+      05: "Maio"
+      06: "Junho"
+      07: "Julho"
+      08: "Agosto"
+      09: "Setembro"
+      10: "Outubro"
+      11: "Novembro"
+      12: "Dezembro"
+permalinks:
+  posts: '/:filename'
