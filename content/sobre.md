@@ -8,7 +8,7 @@ comments: false
 
 Atualmente (ago/2021), tenho 84 projetos apoiados no Catarse, a grande maioria em livros de RPG.
 
-Minha motivação em criar esse blog (e a [Tabela](https://manoelmozzer.github.io/atraso-coletivo/), e a comunidade no [Discord](https://discord.gg/sbTRKnbbdf)), veio após alguns projetos que apoiei estarem com ar de abandono pelos seus Criadores (sem novidades, sem comunicação e sem respostas aos questionamentos).
+Minha motivação em criar esse blog (e a [Tabela](/tabela.html), e a comunidade no [Discord](https://discord.gg/sbTRKnbbdf)), veio após alguns projetos que apoiei estarem com ar de abandono pelos seus Criadores (sem novidades, sem comunicação e sem respostas aos questionamentos).
 
 Me senti completamente isolado, justamente o oposto da ideia do crowdfunding, que nasce sendo coletivo.
 
