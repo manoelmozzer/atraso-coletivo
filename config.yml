@@ -37,13 +37,13 @@ params:
       das plataformas e dos criadores.
 
       Tem algum financiamento atrasado/abandonado? Indique na
-      [Tabela](tabela.html) e ingresse no
+      [Tabela](/tabela.html) e ingresse no
       [Discord](https://discord.gg/sbTRKnbbdf).
   socialIcons:
     - name: github
       url: 'https://github.com/manoelmozzer/atraso-coletivo'
     - name: tabela
-      url: tabela.html
+      url: /tabela.html
     - name: discord
       url: 'https://discord.gg/sbTRKnbbdf'
 languages:
