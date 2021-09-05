@@ -1,7 +1,7 @@
 {{- $scratch := newScratch }}
 
 {{- if not .Date.IsZero -}}
-{{/* comantário */}}
+{{/* comentário */}}
 {{/* {{i18n .Date.Month}} {{.Date.Day}}, {{.Date.Year}}&nbsp;· */}}
 {{- if $.Site.Params.months -}}
 {{- $mes := printf "%d" (.Date.Month) -}}
